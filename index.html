@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Meerab ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--blush:#F8DCE6;--pink:#F3C6D6;--mar:#713047;--dmar:#542437;--cream:#FFFCF7;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100dvh;color:var(--mar);background:radial-gradient(circle at 20% 10%,#fff0f5,transparent 50%),linear-gradient(160deg,var(--blush),var(--pink));font:17px/1.6 "Playfair Display",Georgia,serif;overflow-x:hidden}
+#fx{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.fl{position:absolute;bottom:-30px;color:var(--mar);opacity:.35;animation:rise linear forwards}
+@keyframes rise{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+.cf{position:absolute;top:-20px;width:9px;height:14px;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(112vh) rotate(720deg)}}
+.screen{display:none;position:relative;z-index:1;min-height:100dvh;padding:28px 18px;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px}
+.screen.active{display:flex;animation:in .7s ease}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+h1,h2{margin:0;color:var(--dmar);line-height:1.2}
+h1{font-size:clamp(30px,8vw,50px)}h2{font-size:clamp(24px,6vw,36px)}
+.script{font-family:Caveat,cursive;font-size:26px;margin:0}
+p{margin:0}
+.btn{font:inherit;font-weight:700;color:var(--cream);background:var(--mar);border:2px solid var(--dmar);border-radius:999px;padding:13px 30px;cursor:pointer;box-shadow:0 6px 0 var(--dmar),0 10px 20px #54243744;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:translateY(4px);box-shadow:0 2px 0 var(--dmar)}
+:focus-visible{outline:3px solid var(--dmar);outline-offset:3px}
+.card{background:#fffcf7cc;border:2px solid var(--mar);outline:1px dashed var(--pink);outline-offset:-8px;border-radius:22px;padding:26px 22px;width:min(480px,100%);box-shadow:0 14px 34px #71304733;display:flex;flex-direction:column;gap:14px;align-items:center}
+input{font:inherit;width:100%;text-align:center;padding:12px;border-radius:14px;border:2px solid var(--mar);background:var(--cream);color:var(--dmar)}
+.msg{min-height:1.6em;font-style:italic;font-size:15px}
+.shake{animation:sh .4s}@keyframes sh{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+svg{max-width:100%}
+.flame{transform-origin:100px 52px;animation:fk 1s ease-in-out infinite alternate}@keyframes fk{to{transform:scale(1.15,.9) rotate(4deg)}}
+.bob{animation:bob 3s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-8px)}}
+.dots{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.dot{font-size:13px;padding:4px 14px;border-radius:99px;border:2px solid var(--mar);opacity:.55}
+.dot.on{opacity:1;background:var(--pink)}.dot.done{background:var(--mar);color:var(--cream);opacity:1}
+.gift{background:none;border:0;cursor:pointer;padding:0}
+.lid{transition:transform .8s cubic-bezier(.3,1.5,.5,1);transform-box:fill-box}
+.open .lid{transform:translateY(-46px) rotate(-14deg)}
+.glow{opacity:0;transition:opacity .8s}.open .glow{opacity:1}
+.quote{font-size:18px;font-style:italic;text-align:center}
+.mask{font:inherit;font-style:normal;font-weight:700;color:var(--mar);background:var(--pink);border:1px dashed var(--mar);border-radius:6px;padding:0 6px;cursor:pointer;filter:blur(6px);transition:filter .5s}
+.mask.show{filter:none}
+.hide{display:none!important}
+.envwrap{position:relative;width:min(320px,86vw);height:330px;cursor:pointer;margin-top:10px;transition:height .9s,opacity .9s}
+.env{position:absolute;left:0;right:0;bottom:0;height:210px}
+.env>*{position:absolute}
+.eb{inset:0;background:#e79ab4;border-radius:8px}
+.ep{left:8%;right:8%;top:10px;height:88%;background:var(--cream);border-radius:4px;z-index:2;transition:transform 1.1s ease .5s;padding:14px;font-family:Caveat,cursive;font-size:22px;color:var(--mar)}
+.ef{inset:0;z-index:3;background:var(--pink);clip-path:polygon(0 100%,0 0,50% 58%,100% 0,100% 100%);border-radius:8px}
+.fp{left:0;top:0;width:100%;height:58%;background:#ee9fb8;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;z-index:4;transition:transform .7s,z-index 0s}
+.seal{left:50%;top:44%;width:44px;height:44px;margin-left:-22px;border-radius:50%;background:var(--mar);color:var(--blush);display:grid;place-items:center;font-size:22px;z-index:5;box-shadow:0 3px 8px #0004;transition:transform .5s,opacity .5s}
+.opened .seal{transform:scale(0) rotate(90deg);opacity:0}
+.opened .fp{transform:rotateX(180deg);z-index:1;transition:transform .7s,z-index 0s .35s}
+.opened .ep{transform:translateY(-130px)}
+.sheet{width:min(560px,100%);max-height:72dvh;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;background:var(--cream);border:2px solid var(--mar);outline:1px solid var(--pink);outline-offset:-9px;border-radius:6px;padding:34px 26px;text-align:left;box-shadow:0 18px 40px #54243755;background-image:repeating-linear-gradient(transparent 0 31px,#f3c6d655 31px 32px)}
+.sheet h2{text-align:center;margin-bottom:18px}.sheet p{margin-bottom:16px;line-height:1.85}
+.sheet .sig{text-align:center;font-weight:700}
+@media(max-width:480px){body{font-size:16px}.sheet{padding:26px 18px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}}
+</style>
+</head>
+<body>
+<div id="fx" aria-hidden="true"></div>
+
+<main>
+<section class="screen active" id="welcome">
+  <div class="art" aria-hidden="true"></div>
+  <h1>Welcome, Birthday Girl ♡</h1>
+  <p class="script">a little surprise is waiting for you</p>
+  <button class="btn" data-go="name">Step Inside ♡</button>
+</section>
+
+<section class="screen" id="name">
+  <div class="card">
+    <h2>What’s your name?</h2>
+    <label for="nm" class="script">Enter Your Name</label>
+    <input id="nm" autocomplete="off" autocapitalize="characters" placeholder="Your name ♡">
+    <p class="msg" id="nmMsg" role="status"></p>
+    <button class="btn" id="nmBtn">That’s me ♡</button>
+  </div>
+</section>
+
+<section class="screen" id="date">
+  <div class="card">
+    <h2>When is your special day?</h2>
+    <label for="dt" class="script">Enter the date</label>
+    <input id="dt" autocomplete="off" placeholder="e.g. 1 January">
+    <p class="msg" id="dtMsg" role="status"></p>
+    <button class="btn" id="dtBtn">Unlock ♡</button>
+  </div>
+</section>
+
+<section class="screen" id="bday">
+  <div class="art" aria-hidden="true"></div>
+  <h1>Happy Birthday, Meerab! ♡</h1>
+  <p class="script">this day belongs to you</p>
+  <button class="btn" id="first">Find Your First Gift</button>
+</section>
+
+<section class="screen" id="boxes">
+  <div class="dots" id="dots" aria-label="Progress"></div>
+  <h2 id="bTitle"></h2>
+  <button class="gift" id="gift" aria-label="Open the gift box"></button>
+  <p class="script" id="hint">tap the gift to open it</p>
+  <div class="card hide" id="bCard">
+    <p class="quote" id="quote"></p>
+    <p class="msg">Tap the blurred word to reveal it, then type it below.</p>
+    <input id="pw" autocomplete="off" aria-label="Hidden password word" placeholder="Hidden word">
+    <p class="msg" id="pwMsg" role="status"></p>
+    <button class="btn" id="pwBtn">Unlock ♡</button>
+  </div>
+</section>
+
+<section class="screen" id="prayer">
+  <div class="card" style="gap:18px">
+    <div class="script" aria-hidden="true">♡ ✦ ♡</div>
+    <h2>A Little Prayer for You, Meerab 🤍</h2>
+    <p style="line-height:1.85">May Allah always keep you happy, bless you with endless success and a beautiful destiny. May He protect you from every hardship, keep you safe from sadness and worries, and fill your life with peace, love, and countless blessings. May every sincere wish of your heart come true, and may happiness always find its way to you. Ameen. ♡</p>
+    <button class="btn" data-go="letter">Open Your Letter 💌</button>
+  </div>
+</section>
+
+<section class="screen" id="letter">
+  <div id="envBox">
+    <h2>One Last Thing, Birthday Girl…</h2>
+    <p class="script">A letter, just for you ♡</p>
+    <p>Tap the envelope. There’s something I’ve been wanting to tell you.</p>
+    <div class="envwrap" id="envwrap" role="button" tabindex="0" aria-label="Open the envelope">
+      <div class="env" id="env"><div class="eb"></div><div class="ep" aria-hidden="true">for Meerab ♡</div><div class="ef"></div><div class="fp"></div><div class="seal">♥</div></div>
+    </div>
+    <button class="btn" id="openEnv">Open Envelope ♡</button>
+  </div>
+  <article class="sheet hide" id="sheet" tabindex="0" aria-label="Your letter">
+    <h2>To My Birthday Girl, Meerab 💌</h2>
+    <p>Happy Birthday to the girl who has been a part of my life since tenth grade, and somehow, despite all our differences, is still here.</p>
+    <p>It’s funny how two people can have such different personalities, different routines, and different ways of looking at things, yet still manage to keep a friendship alive. We went to different colleges, our lives took different directions, and we don’t always see things the same way. But here we are, still in touch, still talking, and still making room for each other in our lives.</p>
+    <p>I know you have your complaints about me. Sometimes, you have a lot to say, and honestly, I know I may not always be the easiest person to reach or the most available friend in the world. I get busy, I get caught up in my own little world, and sometimes I might not express things the way you expect me to. But please never mistake that for not caring about you.</p>
+    <p>You can complain a thousand times, and I’ll listen to those thousand complaints. You can tell me what hurt you, what annoyed you, or what you wish I had done differently. You don’t have to pretend everything is fine with me. And whenever you need me, you can call out to me. I might not always have the perfect words, and I might not always know exactly what to do, but I’ll try to be there for you in whatever way I can.</p>
+    <p>The truth is, I’m probably not the best at making friends. I don’t always know how to maintain every connection perfectly, and I know I have my own flaws. But I do try. I try in my own way, with the understanding and effort I have to offer. And if there’s one thing I want you to know today, it’s that you’re someone I genuinely want to keep in my life.</p>
+    <p>We don’t have to be alike. We don’t have to agree on everything. We don’t even have to be in touch every single moment to prove that our friendship matters. I just hope we continue to understand each other a little better, forgive each other’s little mistakes, and keep choosing this friendship, even when we’re being our usual, completely different selves.</p>
+    <p>And Meerab, as long as you want me in your life, I’ll be here, trying to make this friendship work with you. No unrealistic promises that we’ll never change or never have misunderstandings, just a sincere promise that, as long as we both want this friendship, I’ll keep making an effort to hold on to it.</p>
+    <p>So, on your birthday, I wish you happiness that stays, peace that finds you even on difficult days, and people who make you feel loved without having to ask for it.</p>
+    <p class="sig">Happy Birthday, Meerab. 🤍</p>
+    <p>Here’s to our friendship, our differences, our endless complaints, and all the years we may still have ahead of us — for as long as we both choose to stay.</p>
+  </article>
+</section>
+</main>
+
+<script>
+const $=s=>document.querySelector(s), RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const CAKE=`<svg class="bob" viewBox="0 0 200 190" width="230" role="img" aria-label="Birthday cake">
+<ellipse cx="100" cy="176" rx="82" ry="9" fill="#713047" opacity=".25"/>
+<rect x="30" y="112" width="140" height="58" rx="14" fill="#F3C6D6" stroke="#713047" stroke-width="3"/>
+<rect x="50" y="76" width="100" height="42" rx="12" fill="#FFFCF7" stroke="#713047" stroke-width="3"/>
+<path d="M50 92q10 14 20 0t20 0 20 0 20 0 20 0" fill="none" stroke="#713047" stroke-width="3"/>
+<path d="M30 130q12 16 23 0t23 0 23 0 23 0 23 0" fill="none" stroke="#713047" stroke-width="3"/>
+<rect x="95" y="52" width="10" height="26" rx="3" fill="#713047"/>
+<g class="flame"><path d="M100 28q12 14 0 24q-12-10 0-24z" fill="#F8B04A" stroke="#713047" stroke-width="2"/></g>
+<text x="100" y="158" text-anchor="middle" font-size="26" fill="#713047">♥</text>
+<g fill="#713047"><ellipse cx="62" cy="76" rx="12" ry="7" transform="rotate(-25 62 76)"/><ellipse cx="82" cy="76" rx="12" ry="7" transform="rotate(25 82 76)"/><circle cx="72" cy="77" r="5" fill="#F3C6D6"/></g>
+<text x="22" y="60" font-size="18" fill="#713047">✦</text><text x="166" y="48" font-size="14" fill="#713047">✦</text><text x="150" y="100" font-size="16" fill="#713047">♡</text></svg>`;
+document.querySelectorAll('.art').forEach(a=>a.innerHTML=CAKE);
+
+function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===id));scrollTo(0,0);if(id==='bday')confetti(70)}
+document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
+
+/* floating hearts & confetti */
+const fx=$('#fx');
+function heart(){const s=document.createElement('span');s.className='fl';s.textContent=['♥','♡','✦'][Math.random()*3|0];s.style.left=Math.random()*100+'%';s.style.fontSize=10+Math.random()*16+'px';s.style.animationDuration=9+Math.random()*8+'s';fx.appendChild(s);setTimeout(()=>s.remove(),18000)}
+if(!RM){setInterval(heart,1100);for(let i=0;i<6;i++)heart()}
+function confetti(n){if(RM)return;const c=['#713047','#F3C6D6','#fff','#e79ab4','#542437'];for(let i=0;i<n;i++){const s=document.createElement('span');s.className='cf';s.style.left=Math.random()*100+'%';s.style.background=c[i%5];s.style.borderRadius=i%3?'2px':'50%';s.style.animationDuration=2.5+Math.random()*2.5+'s';s.style.animationDelay=Math.random()*.8+'s';fx.appendChild(s);setTimeout(()=>s.remove(),6500)}}
+
+/* sound (starts only after a click/tap) */
+let ac;
+function whoosh(){try{ac=ac||new(window.AudioContext||window.webkitAudioContext)();const t=ac.currentTime,n=ac.createBuffer(1,ac.sampleRate*.5,ac.sampleRate),d=n.getChannelData(0);
+for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*(1-i/d.length);
+const s=ac.createBufferSource();s.buffer=n;const f=ac.createBiquadFilter();f.type='bandpass';f.frequency.setValueAtTime(900,t);f.frequency.exponentialRampToValueAtTime(3000,t+.5);
+const g=ac.createGain();g.gain.setValueAtTime(.12,t);g.gain.exponentialRampToValueAtTime(.001,t+.5);s.connect(f).connect(g).connect(ac.destination);s.start(t);
+[880,1318].forEach((fr,i)=>{const o=ac.createOscillator(),og=ac.createGain();o.frequency.value=fr;og.gain.setValueAtTime(0,t+.5+i*.12);og.gain.linearRampToValueAtTime(.06,t+.55+i*.12);og.gain.exponentialRampToValueAtTime(.001,t+1.4);o.connect(og).connect(ac.destination);o.start(t+.5+i*.12);o.stop(t+1.5)})}catch(e){}}
+
+/* name */
+const shakeEl=e=>{e.classList.remove('shake');void e.offsetWidth;e.classList.add('shake')};
+const oops=["Hmm, that doesn’t sound like the birthday girl I know… try again ♡","Not quite! Whisper it once more, softly ♡","Nope, that’s not who I’m looking for. Give it another go ♡"];let ni=0;
+function checkName(){const v=$('#nm').value.trim().toLowerCase();
+if(v==='meerab'){$('#nmMsg').textContent='There you are! ♡';setTimeout(()=>go('date'),500)}
+else{$('#nmMsg').textContent=oops[ni++%3];shakeEl($('#nm'))}}
+$('#nmBtn').onclick=checkName;$('#nm').onkeydown=e=>{if(e.key==='Enter')checkName()};
+
+/* date: accepts 29 October, October 29, 29th October, 29 Oct */
+function okDate(s){s=s.toLowerCase().replace(/[,.]/g,' ').replace(/(\d)(st|nd|rd|th)\b/g,'$1').replace(/\bof\b/g,' ').replace(/\s+/g,' ').trim();
+return /^29 ?(oct|october)$/.test(s)||/^(oct|october) ?29$/.test(s)||/^29[\/-]10$/.test(s)}
+function checkDate(){if(okDate($('#dt').value)){$('#dtMsg').textContent='Yes! ♡';confetti(40);setTimeout(()=>go('bday'),700)}
+else{$('#dtMsg').textContent='Close, but not quite. Hint: it’s in autumn, near the end of the month ♡';shakeEl($('#dt'))}}
+$('#dtBtn').onclick=checkDate;$('#dt').onkeydown=e=>{if(e.key==='Enter')checkDate()};
+
+/* gift boxes */
+const B=[
+{t:'Box 1 · The Oldest Friend',w:'CHAPTERS',q:'Some people become a part of our story so quietly that one day we realize they have been there through so many chapters. You are one of those people for me.'},
+{t:'Box 2 · You Made Me Believe',w:'BEAUTIFUL',q:'You were one of the reasons I started believing that friendship could be something truly beautiful — something worth keeping, even when two people are different.'},
+{t:'Box 3 · Our Little Moments',w:'STAY',q:'It is funny how we can be so different in so many ways, yet seeing you still brings a familiar kind of happiness. Some friendships do not need two identical people; they just need two hearts willing to stay.'}];
+let bi=0,locked=false;
+const GIFT=`<svg viewBox="0 0 160 160" width="170" aria-hidden="true"><ellipse class="glow" cx="80" cy="70" rx="60" ry="40" fill="#fff" opacity=".8"/>
+<rect x="24" y="68" width="112" height="82" rx="6" fill="#F3C6D6" stroke="#713047" stroke-width="3"/><rect x="72" y="68" width="16" height="82" fill="#713047"/>
+<g class="lid"><rect x="16" y="46" width="128" height="26" rx="6" fill="#e79ab4" stroke="#713047" stroke-width="3"/><rect x="72" y="46" width="16" height="26" fill="#713047"/>
+<g fill="#713047"><ellipse cx="62" cy="40" rx="20" ry="11" transform="rotate(-20 62 40)"/><ellipse cx="98" cy="40" rx="20" ry="11" transform="rotate(20 98 40)"/><circle cx="80" cy="45" r="7" fill="#F8DCE6" stroke="#713047" stroke-width="2"/></g></g></svg>`;
+function showBox(){const b=B[bi];locked=false;$('#bTitle').textContent=b.t;
+$('#dots').innerHTML=B.map((x,i)=>`<span class="dot ${i<bi?'done':i===bi?'on':''}">Box ${i+1}${i<bi?' ✓':''}</span>`).join('');
+$('#gift').innerHTML=GIFT;$('#gift').classList.remove('open');$('#gift').disabled=false;$('#hint').classList.remove('hide');$('#bCard').classList.add('hide');
+$('#pw').value='';$('#pwMsg').textContent='';$('#pwBtn').disabled=false;
+const re=new RegExp('\\b('+b.w+')\\b','i');
+$('#quote').innerHTML='“'+b.q.replace(re,'<button class="mask" id="mask" aria-label="Hidden word. Tap to reveal">$1</button>')+'”';
+$('#mask').onclick=e=>{e.target.classList.add('show');e.target.removeAttribute('aria-label')}}
+$('#first').onclick=()=>{bi=0;showBox();go('boxes')};
+$('#gift').onclick=()=>{$('#gift').classList.add('open');$('#gift').disabled=true;$('#hint').classList.add('hide');confetti(15);
+setTimeout(()=>{$('#bCard').classList.remove('hide');$('#bCard').scrollIntoView({behavior:RM?'auto':'smooth',block:'center'})},RM?0:800)};
+function checkPw(){if(locked)return;const v=$('#pw').value.trim().toUpperCase();
+if(v===B[bi].w){locked=true;$('#pwBtn').disabled=true;$('#pwMsg').textContent=bi<2?'Unlocked! The next gift is coming ♡':'All three unlocked! ♡';confetti(30);
+setTimeout(()=>{if(bi<2){bi++;showBox()}else go('prayer')},1200)}
+else{$('#pwMsg').textContent=v?'Not that one. Tap the blurred word in the quote, then type it exactly ♡':'Type the hidden word first ♡';shakeEl($('#pw'))}}
+$('#pwBtn').onclick=checkPw;$('#pw').onkeydown=e=>{if(e.key==='Enter')checkPw()};
+
+/* envelope */
+let opened=false;
+function openEnv(){if(opened)return;opened=true;$('#openEnv').disabled=true;whoosh();$('#env').classList.add('opened');
+setTimeout(()=>{$('#envwrap').style.opacity=0},RM?0:2300);
+setTimeout(()=>{$('#envBox').classList.add('hide');const s=$('#sheet');s.classList.remove('hide');s.style.animation='in .9s ease';scrollTo(0,0);s.focus({preventScroll:true})},RM?50:3100)}
+$('#envwrap').onclick=openEnv;$('#openEnv').onclick=openEnv;
+$('#envwrap').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openEnv()}};
+</script>
+</body>
+</html>
